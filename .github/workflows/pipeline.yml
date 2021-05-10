@@ -40,7 +40,7 @@ jobs:
           healthcheck: "https://finnish-pokedex-test.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
-      - name: Bump version and push tag
+      - name: Bump version add (push) tag
         if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip') }}
         uses: anothrNick/github-tag-action@1.33.0
         env:
